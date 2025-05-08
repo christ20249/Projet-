@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - immoManager</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1c92d2, #f2fcfe);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .card h2 {
+      color: #2980b9;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .card button:hover {
+      background-color: #3498db;
+    }
+
+    form {
+      display: none;
+      margin-top: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: #34495e;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">immoManager</div>
+
+  <div class="card">
+    <h2>Connexion</h2>
+    <p>Choisissez un rôle :</p>
+    <button onclick="showForm('admin')">Admin</button>
+    <button onclick="showForm('user')">Utilisateur</button>
+
+    <form id="adminForm">
+      <h3>Admin</h3>
+      <input type="text" placeholder="Identifiant admin" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+
+    <form id="userForm">
+      <h3>Utilisateur</h3>
+      <input type="text" placeholder="Nom d'utilisateur" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 immoManager - Tous droits réservés
+  </div>
+
+  <script>
+    function showForm(role) {
+      document.getElementById('adminForm').style.display = role === 'admin' ? 'block' : 'none';
+      document.getElementById('userForm').style.display = role === 'user' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
